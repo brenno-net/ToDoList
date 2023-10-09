@@ -5,6 +5,7 @@ import {AiFillDelete} from "react-icons/ai"
 
 
 const ToDo = ({text, updateMode, deleteToDo}) =>{
+  
     return (   
         <div className="todo">
             <div className="text">{text}</div>
