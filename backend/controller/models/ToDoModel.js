@@ -12,7 +12,12 @@ const todoSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now(),
-      }
-})
+      },
+      category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        required: false,
+      },
+});
 
 module.exports = mongoose.model('ToDo',todoSchema)
