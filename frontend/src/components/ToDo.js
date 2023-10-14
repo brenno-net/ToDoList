@@ -8,7 +8,7 @@ import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
 
 
 
-const ToDo = ({text, updateMode, deleteToDo}) =>{
+const ToDo = ({text , updateMode, deleteToDo}) =>{
     const [isChecked, setIsChecked] = useState(false);
 
     const handleCheck = () => {

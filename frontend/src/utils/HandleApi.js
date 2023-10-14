@@ -31,7 +31,7 @@ const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
     .post(`${baseUrl}/update`, {_id: toDoId, text})
     .then((data) => {
         setText("")
-        setIsUpdating(false)
+        setIsUpdating(false) 
         getAllToDo(setToDo)
     })
     .catch((err) => console.log(err))

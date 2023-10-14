@@ -6,9 +6,9 @@ const router = Router()
  
 router.get ('/', getToDo);
 router.post('/save', saveToDo);
-router.post('/update/:id', updateToDo);
-router.post('/delete/:id', deleteToDo);
-router.post('/check/:id',checkToDo);
+router.post('/update/', updateToDo);
+router.post('/delete/', deleteToDo);
+router.post('/check/',checkToDo);
 router.post('/categories', );
 
 
