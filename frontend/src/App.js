@@ -29,7 +29,7 @@ const updateMode  = (_id, text) => {
 
       <div className="container">
 
-        <h1>ToDoApp</h1>
+        <h1>Nome Do App</h1>
 
         <div className="top">
 

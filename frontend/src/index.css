@@ -20,6 +20,7 @@ h1{
   margin-top: 1rem;
   text-align: center;
   font-size: 50px;
+  color: #027373;
 }
 
 .top{
@@ -32,12 +33,14 @@ h1{
 
 .add{
 
-  background-color: #000;
+  background-color: #038C7F;
   color: #fff;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   border-radius: 5px;
 
+}.add:hover{
+  background-color:#A9D9D0;
 }
 
 input{
