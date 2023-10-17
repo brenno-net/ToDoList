@@ -9,7 +9,7 @@ router.post('/save', saveToDo);
 router.post('/update/', updateToDo);
 router.post('/delete/', deleteToDo);
 router.post('/check/',checkToDo);
-router.post('/categories', );
+
 
 
 module.exports = router;
