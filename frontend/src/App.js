@@ -33,10 +33,11 @@ const updateMode  = (_id, text) => {
 
         <div className="top">
 
-          <input type="text" 
+          <input type="text"
           placeholder="Adicionar Tarefa" 
           value={text}
           onChange={(e) => setText(e.target.value)}
+          maxLength={46}
           />
 
           <div 

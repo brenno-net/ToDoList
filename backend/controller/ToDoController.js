@@ -9,6 +9,10 @@ module.exports.getToDo = async (req,res) =>  {
 module.exports.saveToDo = async (req, res) => {
   const { text, category } = req.body;
 
+    if (!text || text.trim( )=== ''){
+      return res.status(400).send("O campo de texto não pode estar vazio.");
+    }
+
   ToDoModel.create({ text, category })
     .then((data) => {
       console.log("Adicionado com sucesso...");
