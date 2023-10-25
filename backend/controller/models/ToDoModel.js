@@ -14,7 +14,7 @@ const todoSchema = new mongoose.Schema({
   date: {
     type: Date, // Campo 'date' é do tipo Date
     default: Date.now(), // O valor padrão é a data e hora atual
-  },
+  }
 });
 
 // Exporta o modelo de tarefa (ToDo) criado a partir do esquema criado

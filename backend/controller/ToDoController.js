@@ -1,7 +1,7 @@
 // Importa o modelo de tarefa (ToDoModel) da aplicação
 const ToDoModel = require("./models/ToDoModel");
 
-// Exporta funções que manipulam as operações relacionadas às tarefas (CRUD)
+
 
 // Função para obter todas as tarefas do banco de dados
 module.exports.getToDo = async (req, res) => {
