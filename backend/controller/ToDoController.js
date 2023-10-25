@@ -60,7 +60,7 @@ module.exports.deleteToDo = async (req, res) => {
     // Exclui a tarefa do banco de dados usando o modelo ToDoModel
     const deletedToDo = await ToDoModel.findByIdAndDelete(_id);
 
-    console.log("Deletado com sucesso...");
+    
     console.log(deletedToDo);
     res.send("Deletado com sucesso...");
   } catch (error) {
