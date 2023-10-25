@@ -9,7 +9,7 @@ require("dotenv").config(); // Carrega variáveis de ambiente do arquivo .env
 
 const app = express(); // Cria uma instância do Express
 
-const PORT = process.env.PORT || 5000; // Define a porta do servidor a partir da variável de ambiente ou usa a porta 5000 por padrão
+const PORT = process.env.PORT || 5000; // Define a porta do servidor
 
 app.use(express.json()); // Habilita o Express para interpretar solicitações no formato JSON
 app.use(cors()); // Habilita o CORS para permitir solicitações de diferentes origens
