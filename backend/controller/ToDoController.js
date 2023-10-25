@@ -1,19 +1,24 @@
+// Importa o modelo de tarefa (ToDoModel) da aplicação
 const ToDoModel = require("./models/ToDoModel");
 
-module.exports.getToDo = async (req,res) =>  {
-    const ToDo = await ToDoModel.find()
-        res.send(ToDo)
-    
+// Exporta funções que manipulam as operações relacionadas às tarefas (CRUD)
+
+// Função para obter todas as tarefas do banco de dados
+module.exports.getToDo = async (req, res) => {
+  const ToDo = await ToDoModel.find();
+  res.send(ToDo);  // Envia a lista de tarefas como resposta
 };
 
+// Função para salvar uma nova tarefa
 module.exports.saveToDo = async (req, res) => {
-  const { text, category } = req.body;
+  const { text } = req.body;  // Extrai o campo 'text' do corpo da solicitação (request body)
 
-    if (!text || text.trim( )=== ''){
-      return res.status(400).send("O campo de texto não pode estar vazio.");
-    }
+  if (!text || text.trim() === "") { // Verifica se o campo 'text' está vazio ou apenas contém espaços em branco
+    return res.status(400).send("O campo de texto não pode estar vazio.");
+  }
 
-  ToDoModel.create({ text, category })
+  // Cria uma nova tarefa no banco de dados usando o modelo ToDoModel
+  ToDoModel.create({ text })
     .then((data) => {
       console.log("Adicionado com sucesso...");
       console.log(data);
@@ -25,48 +30,63 @@ module.exports.saveToDo = async (req, res) => {
     });
 };
 
+// Função para atualizar uma tarefa existente
 module.exports.updateToDo = async (req, res) => {
-    try {
-      const { _id, text, category } = req.body;
-      const updatedToDo = await ToDoModel.findByIdAndUpdate(
-        _id,
-        { text, category },
-        { new: true }
-      );
-      console.log("Atualizado com sucesso...");
-      console.log(updatedToDo);
-      res.send(updatedToDo);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Erro ao atualizar tarefa.");
-    }
-  };
+  try {         // Extrai o campo '_id' e 'text' do corpo da solicitação (request body)
+    const { _id, text } = req.body;
 
-  module.exports.deleteToDo = async (req, res) => {
-    try {
-      const { _id } = req.body;
-      const deletedToDo = await ToDoModel.findByIdAndDelete(_id);
-      console.log("Deletado com sucesso...");
-      console.log(deletedToDo);
-      res.send("Deletado com sucesso...");
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Erro ao deletar tarefa.");
-    }
-  };
+    // Atualiza a tarefa no banco de dados usando o modelo ToDoModel
+    const updatedToDo = await ToDoModel.findByIdAndUpdate(
+      _id,
+      { text },
+      { new: true } // Retorna o documento atualizado
+    );
 
+    console.log("Atualizado com sucesso...");
+    console.log(updatedToDo);
+    res.send(updatedToDo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao atualizar tarefa.");
+  }
+};
 
-    module.exports.checkToDo = async (req, res) => {
-      try {
-        const  { _id, check } = req.body;
-        const checkedToDo = await ToDoModel.findByIdAndUpdate(_id, { check }, { new: true });
-        console.log("Atualizado com sucesso...");
-        console.log(checkedToDo);
-        res.send(checkedToDo);
-      } catch (error) {
-        console.error(error);
-        res.status(500).send("Erro ao atualizar tarefa.");
-      }
-      }
-  
-    
+// Função para excluir uma tarefa
+module.exports.deleteToDo = async (req, res) => {
+  try {
+    // Extrai o campo '_id' do corpo da solicitação (request body)
+    const { _id } = req.body;
+
+    // Exclui a tarefa do banco de dados usando o modelo ToDoModel
+    const deletedToDo = await ToDoModel.findByIdAndDelete(_id);
+
+    console.log("Deletado com sucesso...");
+    console.log(deletedToDo);
+    res.send("Deletado com sucesso...");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao deletar tarefa.");
+  }
+};
+
+// Função para marcar uma tarefa como concluída
+module.exports.checkToDo = async (req, res) => {
+  try {
+    // Extrai o campo '_id' e 'check' do corpo da solicitação (request body)
+    const { _id, check } = req.body;
+
+    // Atualiza o campo 'check' da tarefa no banco de dados usando o modelo ToDoModel
+    const checkedToDo = await ToDoModel.findByIdAndUpdate(
+      _id,
+      { check },
+      { new: true } // Retorna o documento atualizado
+    );
+
+    console.log("Atualizado com sucesso...");
+    console.log(checkedToDo);
+    res.send(checkedToDo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao atualizar tarefa.");
+  }
+};
