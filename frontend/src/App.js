@@ -56,6 +56,7 @@ const updateMode  = (_id, text) => {
           {toDo.map((item) => <ToDo 
           key={item._id} 
           text={item.text}
+          isChecked={item.isChecked}
           updateMode = {() => updateMode(item._id, item.text)}
           deleteToDo={() => deleteToDo(item._id, setToDo)}/>)}
           

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
 
 
 import {BiEdit} from "react-icons/bi"
@@ -8,12 +8,20 @@ import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
 
 
 
-const ToDo = ({text , updateMode, deleteToDo}) =>{
-    const [isChecked, setIsChecked] = useState(false);
+const ToDo = ({text , updateMode, deleteToDo, toDoId}) =>{
+    const [isChecked, setIsChecked] = useState(
+        localStorage.getItem(`isChecked-${text}`) === 'true'
+      );
 
-    const handleCheck = () => {
+      useEffect(() => {
+        localStorage.setItem(`isChecked-${text}`, isChecked);
+      }, [isChecked, text]);
+
+      const handleCheck = () => {
         setIsChecked(!isChecked);
-    }
+        localStorage.setItem(`isChecked-${toDoId}`, (!isChecked).toString());
+      };
+      
   
     return (   
         <div className={`todo ${isChecked ? 'completed' : ''}`}>
