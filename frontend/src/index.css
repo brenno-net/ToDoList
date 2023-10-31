@@ -11,9 +11,16 @@ body {
 
 .container{
 
-  max-width: 600px;
+  
+  display: grid;
+  grid-template-columns: 1fr 250px; /* Duas colunas: a primeira se ajusta automaticamente, a segunda tem uma largura fixa */
+  grid-gap: 20px; /* Espaço entre as colunas */
+  max-width: 1000px; /* Largura máxima do container principal */
   margin: auto;
-  padding: 0 1rem;
+  padding: 20px;
+  
+  /* Restante do seu CSS existente */
+  
   
 }
 
@@ -92,7 +99,9 @@ icon{
 }
 
 .pomodoro-box {
-  display: flex;
+  position:relative;
+  justify-content: center;
+  align-items: center; /* Alinha verticalmente ao centro */
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -100,5 +109,38 @@ icon{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   width: 250px; /* Ajuste a largura conforme necessário */
   margin-left: 20px; /* Espaço entre tarefas e Pomodoro */
+  
+}
+
+.timer {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px;
+  width: 150px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.button{
+
+  background-color: #038C7F;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-left: 20px; /* Espaço entre tarefas e Pomodoro */
   margin-right: 20px;
+}
+.button:hover{
+  background-color: #A9D9D0;
 }

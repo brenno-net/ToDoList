@@ -42,15 +42,15 @@ function Pomodoro() {
 
   return (
     <div className="pomodoro">
-      <h1>Pomodoro Timer</h1>
+      <h2>Pomodoro Timer</h2>
       <div className="timer">
         <p>
           {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
         </p>
       </div>
       <div className="controls">
-        <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-        <button onClick={resetTimer}>Reset</button>
+        <button className="button" onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
+        <button className="button" onClick={resetTimer}>Reset</button>
       </div>
     </div>
   );

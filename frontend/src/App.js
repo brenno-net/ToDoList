@@ -21,48 +21,48 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <h1>Nome Do App</h1>
 
-        <div className="top">
-          <input
-            type="text"
-            placeholder="Adicionar Tarefa"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            maxLength={46}
-          />
+      <h1>Nome Do App</h1>
+      <div className="top">
+      <input
+        type="text"
+        placeholder="Adicionar Tarefa"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        maxLength={46}
+      />
 
-          <div
-            className="add"
-            onClick={
-              isUpdating
-                ? () =>
-                    updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
-                : () => addToDo(text, setText, setToDo)
-            }
-          >
-            {isUpdating ? "Update" : "Adicionar"}
-          </div>
-        </div>
-
-        <div className="list">
-          {toDo.map((item) => (
-            <ToDo
-              key={item._id}
-              text={item.text}
-              isChecked={item.isChecked}
-              updateMode={() => updateMode(item._id, item.text)}
-              deleteToDo={() => deleteToDo(item._id, setToDo)}
-            />
-          ))}
-        </div>
-        
+      <div
+        className="add"
+        onClick={
+          isUpdating
+            ? () => updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
+            : () => addToDo(text, setText, setToDo)
+        }
+      >
+        {isUpdating ? "Update" : "Adicionar"}
       </div>
-      <div className="pomodoro-box">
-          <Pomodoro />
-        </div>
     </div>
+  <div className="container">
+
+    <div className="list">
+      {toDo.map((item) => (
+        <ToDo
+          key={item._id}
+          text={item.text}
+          isChecked={item.isChecked}
+          updateMode={() => updateMode(item._id, item.text)}
+          deleteToDo={() => deleteToDo(item._id, setToDo)}
+        />
+      ))}
+    </div>
+    <div className="pomodoro-box">
+    <Pomodoro />
+  </div>
+  </div>
+
+  
+</div>
   );
 }
 
