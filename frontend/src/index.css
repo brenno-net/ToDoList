@@ -99,29 +99,45 @@ icon{
 }
 
 .pomodoro-box {
-  position:relative;
-  justify-content: center;
-  align-items: center; /* Alinha verticalmente ao centro */
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #45C4B0;
+  background-color: #A9D9D0;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 10px;
   width: 250px; /* Ajuste a largura conforme necessário */
-  margin-left: 20px; /* Espaço entre tarefas e Pomodoro */
+  
   
 }
 
 .timer {
+  position: relative;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 3rem;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  display: inline-block;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #45C4B0;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+  box-shadow: inset 4px 2px 0px 0px #45C4B0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
   margin: 10px;
-  width: 150px;
+  width: 150px; /* Ajuste a largura conforme necessário */
 }
 
 .controls {
@@ -130,17 +146,27 @@ icon{
 
 .button{
 
-  background-color: #038C7F;
-  color: #fff;
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 1em;
-  margin-left: 20px; /* Espaço entre tarefas e Pomodoro */
-  margin-right: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center; /* Para elementos inline */
+align-items: center;
+position: relative;
+font-size: 1rem;
+letter-spacing: 1px;
+text-decoration: none;
+color: #45C4B0;
+background-color: #DAFDBA;
+cursor: pointer;
+border: 3px solid;
+border-radius: 10px;
+padding: 0.25em 0.5em;
+box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+position: relative;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+margin: 10px;
 }
 .button:hover{
   background-color: #A9D9D0;
 }
+

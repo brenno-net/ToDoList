@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import 'font-awesome/css/font-awesome.min.css';
+
+
+
+
+
+
 
 function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
@@ -36,9 +43,11 @@ function Pomodoro() {
 
   const resetTimer = () => {
     setIsActive(false);
-    setMinutes(25);
+    setMinutes(1);
     setSeconds(0);
   };
+
+
 
   return (
     <div className="pomodoro">
@@ -49,7 +58,10 @@ function Pomodoro() {
         </p>
       </div>
       <div className="controls">
-        <button className="button" onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
+      <button className="button" onClick={toggleTimer}>
+          {isActive ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}
+          {isActive ? 'Pause' : 'Start'}
+        </button>
         <button className="button" onClick={resetTimer}>Reset</button>
       </div>
     </div>

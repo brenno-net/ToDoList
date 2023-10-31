@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Nome Do App</h1>
+      <h1>Uni-List</h1>
       <div className="top">
       <input
         type="text"
