@@ -41,14 +41,27 @@ h1{
 
 .add{
 
-  background-color: #038C7F;
-  color: #fff;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  border-radius: 5px;
+  position: relative;
+font-size: 16px;
+letter-spacing: 2px;
+text-decoration: none;
+color: #45C4B0;
+background-color: #DAFDBA;
+cursor: pointer;
+border: 3px solid;
+border-radius: 10px;
+padding: 0.25em 0.5em;
+box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+position: relative;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+margin: 10px;
 
 }.add:hover{
-  background-color:#A9D9D0;
+  
+  background-color: #A9D9D0;
+  box-shadow: inset 4px 2px 0px 0px #45C4B0;
 }
 
 input{
@@ -64,7 +77,7 @@ input{
 
 position: relative;
 font-size: 16px;
-letter-spacing: 1px;
+letter-spacing: 2px;
 text-decoration: none;
 color: #45C4B0;
 background-color: #DAFDBA;
@@ -105,7 +118,6 @@ icon{
   text-decoration: none;
   color: #45C4B0;
   background-color: #A9D9D0;
-  cursor: pointer;
   border: 3px solid;
   border-radius: 10px;
   padding: 0.25em 0.5em;
@@ -127,8 +139,7 @@ icon{
   letter-spacing: 1px;
   text-decoration: none;
   color: #45C4B0;
-  background-color: #e0e0e0;
-  cursor: pointer;
+  background-color: #DAFDBA;
   border: 3px solid;
   border-radius: 10px;
   padding: 0.25em 0.5em;
@@ -167,6 +178,8 @@ touch-action: manipulation;
 margin: 10px;
 }
 .button:hover{
-  background-color: #A9D9D0;
+  background-color: #f0f0f0;
+  box-shadow: inset 4px 2px 0px 0px #45C4B0;
+
 }
 

@@ -10,12 +10,12 @@ import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
 
 const ToDo = ({text , updateMode, deleteToDo, toDoId}) =>{
     const [isChecked, setIsChecked] = useState(
-        localStorage.getItem(`isChecked-${text}`) === 'true'
+        localStorage.getItem(`isChecked-${toDoId}`) === 'true'
       );
 
       useEffect(() => {
-        localStorage.setItem(`isChecked-${text}`, isChecked);
-      }, [isChecked, text]);
+        localStorage.setItem(`isChecked-${toDoId}`, isChecked);
+      }, [isChecked, toDoId]);
 
       const handleCheck = () => {
         setIsChecked(!isChecked);

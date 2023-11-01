@@ -48,7 +48,7 @@ function App() {
     <div className="list">
       {toDo.map((item) => (
         <ToDo
-          key={item._id}
+          toDoId={item._id}
           text={item.text}
           isChecked={item.isChecked}
           updateMode={() => updateMode(item._id, item.text)}
