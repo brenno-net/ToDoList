@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-
-// get our fontawesome imports
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// Importe o áudio que você deseja reproduzir
+import audioFile from '../components/audios/beep-beep-6151.mp3';
 
 function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
-
   const [isBreakActive, setIsBreakActive] = useState(false);
+  const [playAudio, setPlayAudio] = useState(false); // Adicione o estado playAudio
 
   useEffect(() => {
     let interval;
@@ -24,7 +23,7 @@ function Pomodoro() {
         } else {
           clearInterval(interval);
           setIsActive(false);
-          // Você pode adicionar uma notificação aqui quando o tempo acabar
+          setPlayAudio(true); // Iniciar a reprodução do áudio quando o temporizador terminar
         }
       }, 1000);
     } else if (isBreakActive) {
@@ -37,7 +36,7 @@ function Pomodoro() {
         } else {
           clearInterval(interval);
           setIsBreakActive(false);
-          // Você pode adicionar uma notificação de fim do intervalo aqui
+          setPlayAudio(true); // Iniciar a reprodução do áudio quando o temporizador de intervalo terminar
         }
       }, 1000);
     } else {
@@ -48,6 +47,14 @@ function Pomodoro() {
       clearInterval(interval);
     };
   }, [isActive, isBreakActive, minutes, seconds]);
+
+  // Adicione um novo useEffect para controlar a reprodução do áudio
+  useEffect(() => {
+    if (playAudio) {
+      const audio = new Audio(audioFile);
+      audio.play();
+    }
+  }, [playAudio]);
 
   const toggleTimer = () => {
     if (!isBreakActive) {
@@ -71,7 +78,7 @@ function Pomodoro() {
 
   return (
     <div className="pomodoro">
-      <h2>Pomodoro Timer</h2>
+      <h2 className="title">Pomodoro Timer</h2>
       <div className="timer">
         <p>
           {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
@@ -79,7 +86,6 @@ function Pomodoro() {
       </div>
       <div className="controls">
         <button className="button" onClick={toggleTimer}>
-        <FontAwesomeIcon icon="fa-solid fa-play" />
           {isActive ? 'Pause' : 'Start'}
         </button>
         <button className="button" onClick={startBreak}>

@@ -62,6 +62,8 @@ margin: 10px;
   
   background-color: #A9D9D0;
   box-shadow: inset 4px 2px 0px 0px #45C4B0;
+  transform: translate(5px, 5px);
+  
 }
 
 input{
@@ -177,9 +179,16 @@ user-select: none;
 touch-action: manipulation;
 margin: 10px;
 }
-.button:hover{
-  background-color: #f0f0f0;
+button:hover {
+  background-color: #d6f0eb;
   box-shadow: inset 4px 2px 0px 0px #45C4B0;
-
+  transform: translate(5px, 5px);
 }
+
+.title {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
 
