@@ -53,6 +53,7 @@ function Pomodoro() {
     if (playAudio) {
       const audio = new Audio(audioFile);
       audio.play();
+      audio.play();
     }
   }, [playAudio]);
 
