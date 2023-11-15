@@ -5,7 +5,7 @@
 
 body {
   font-family: 'Poppins'; 
-  background-color: #f1f1f1;
+  background-color: #dfdcc5;
 }
 
 .container{
@@ -14,8 +14,7 @@ body {
   display: grid;
   max-width: 1000px; /* Largura máxima do container principal */
   margin-bottom: 1rem;
-  margin-top: 50px;
-  margin: auto;
+  margin: 250px auto;
   padding: 20px;
   border-radius: 20px;
   background-color: #dfdcc5;
@@ -29,7 +28,6 @@ body {
   right: 0;
   background-color: #fffffb;
   color: #f1f1f1;
-  min-height: 10rem; /* Define o tamanho mínimo */
   align-items:center;
   margin-top: 0;
 
@@ -43,11 +41,19 @@ body {
 
 }
 
+.header,
+.navbar {
+  position: fixed;
+  width: 100%; /* Ocupar a largura total da tela */
+  z-index: 100; /* Garante que estejam acima de outros elementos */
+  /* Estilos adicionais como fundo, cores, altura, etc. */
+  background-color: #fffffb;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   font-family: 'Poppins';
   
 }
@@ -59,6 +65,7 @@ body {
   font-family: 'Poppins';
   
 }
+
 
 
 .navbar button {
@@ -193,6 +200,15 @@ icon{
 
 }
 
+.list{
+  flex: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  border-right: 5px solid black;
+}
+
+
+
 /* CONTAINER POMODORO */
 
 .pomodoro-container{
@@ -282,13 +298,14 @@ button:hover {
   letter-spacing: 1px;
   text-decoration: none;
   color: #5b5f97;
-  background-color: #b8b8d1;
-  border-radius: 10px;
+  border-bottom: 2px solid #c4bfa0;
+  border-top: 2px solid #c4bfa0;
   padding: 0.25em 0.5em;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-left: 40px;
   width: 400px; /* Ajuste a largura conforme necessário */
+  height: fit-content;
 }
 

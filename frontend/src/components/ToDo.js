@@ -8,7 +8,7 @@ import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
 
 
 
-const ToDo = ({text , updateMode, deleteToDo, toDoId}) =>{
+const ToDo = ({text ,date,  updateMode, deleteToDo, toDoId}) =>{
     const [isChecked, setIsChecked] = useState(
         localStorage.getItem(`isChecked-${toDoId}`) === 'true'
       );
@@ -22,11 +22,19 @@ const ToDo = ({text , updateMode, deleteToDo, toDoId}) =>{
         localStorage.setItem(`isChecked-${toDoId}`, (!isChecked).toString());
       };
       
+        // Função para formatar a data no formato desejado (exemplo: DD/MM/YYYY)
+  const formatDate = (inputDate) => {
+    const dateObj = new Date(inputDate);
+    return dateObj.toLocaleDateString('pt-BR'); // Formato brasileiro de data (DD/MM/YYYY)
+    // Ou ajuste o 'toLocaleDateString' conforme o formato desejado para a data
+  };
   
-    return (   
+    return (
+      <section class="section">  
         <div className={`todo ${isChecked ? 'completed' : ''}`}>
             <div className="text">{text}</div>
-            <div className="icons">
+            <div className="date">{formatDate(date)}</div>           
+             <div className="icons">
                 <BiEdit className='icon' onClick={updateMode} />
                 <AiFillDelete className= 'icon' onClick={deleteToDo} />
                 {isChecked ? (
@@ -38,6 +46,7 @@ const ToDo = ({text , updateMode, deleteToDo, toDoId}) =>{
             </div>
 
         </div>
+      </section>
     )
 }
 

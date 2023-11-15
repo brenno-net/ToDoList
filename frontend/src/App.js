@@ -79,10 +79,11 @@ function App() {
             </div>
           </div>
 
-          <div className="list">
+          <div className="mandatory">
             {toDo.map((item) => (
               <ToDo
                 key={item._id}
+                date={item.date}
                 toDoId={item._id}
                 text={item.text}
                 isChecked={item.isChecked}
