@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import {FaPlay, FaPause, FaHistory, FaMugHot} from 'react-icons/fa'
+
 
 // Importe o áudio que você deseja reproduzir
 import audioFile from '../components/audios/beep-beep-6151.mp3';
@@ -86,14 +88,14 @@ function Pomodoro() {
         </p>
       </div>
       <div className="controls">
-        <button className="button" onClick={toggleTimer}>
-          {isActive ? 'Pause' : 'Start'}
+        <button className="pomodoro-button" onClick={toggleTimer}>
+          {isActive ? <FaPause/> : <FaPlay/>}
         </button>
-        <button className="button" onClick={startBreak}>
-          Start Break
+        <button className="pomodoro-button" onClick={startBreak}>
+          <FaMugHot/>
         </button>
-        <button className="button" onClick={resetTimer}>
-          Reset
+        <button className="pomodoro-button" onClick={resetTimer}>
+        <FaHistory />
         </button>
       </div>
     </div>

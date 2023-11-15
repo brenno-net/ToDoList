@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ToDo from "../src/components/ToDo";
 import { getAllToDo, addToDo, updateToDo, deleteToDo } from "./utils/HandleApi";
 import Pomodoro from "./components/Pomodoro";
-import { FaQuestion, FaBookOpen } from 'react-icons/fa';
+import { FaQuestion, FaBookOpen, FaPlus, FaRegArrowAltCircleUp } from 'react-icons/fa';
 import Modal from './Modal';
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
   const [isUpdating, setIsUpdating] = useState(false);
   const [toDoId, setToDoId] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState("todo");
+
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
@@ -24,61 +26,96 @@ function App() {
     setToDoId(_id);
   };
 
+  const addOrUpdateToDo = () => {
+    if (isUpdating) {
+      updateToDo(toDoId, text, setToDo, setText, setIsUpdating);
+    } else {
+      addToDo(text, setText, setToDo);
+    }
+  };
+
   return (
     <div className="App">
+      {/* Barra de navegação */}
+      <div class="header">
+      <div class="header__logo">
+      <h1>Uni-List <FaBookOpen/></h1>
+        <div className="description-box">
+          <h4 className="description" >Nossa aplicação web de ToDo list para estudantes oferece funcionalidades simples: criar, editar, marcar e remover tarefas. Organize seus estudos de forma eficaz e mantenha o foco no que é importante.</h4>
+        </div>
 
-<div class="fab-container">
+      </div>
+        <div className="navbar" >
+
+            <button className={currentPage === "todo" ? "button active" : "button"}
+            onClick={() => setCurrentPage("todo")}>ToDo</button>
+            <button className={currentPage === "pomodoro" ? "button active" : "button"}
+            onClick={() => setCurrentPage("pomodoro")}>Pomodoro</button>
+            
+        </div>
+      </div>
+
+      <div className="container">
+      <div class="fab-container">
   <button className="open-button" onClick={handleOpenModal}>
     <FaQuestion />
         </button>
 </div>
+      {/* Restante do seu código */}
 
-      <h1>Uni-List <FaBookOpen/></h1>
-      <h4>O aplicativo foi projetado para simplificar sua rotina, auxiliando na criação, edição e exclusão de tarefas e metas diárias. Desfrute de uma experiência fácil e eficiente de gerenciamento de atividades diárias, tudo ao alcance das suas mãos.</h4>
-      <div className="top">
-        <input
-          type="text"
-          placeholder="Digite sua tarefa aqui..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          maxLength={46}
-        />
-        
-        <div
-          className="add"
-          onClick={
-            isUpdating
-              ? () => updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
-              : () => addToDo(text, setText, setToDo)
-          }
-        >
-          {isUpdating ? "Update" : "Adicionar"}
-        </div>
-
-        
-      </div>
-
-      <div className="container">
-        <div className="list">
-          {toDo.map((item) => (
-            <ToDo
-              toDoId={item._id}
-              text={item.text}
-              isChecked={item.isChecked}
-              updateMode={() => updateMode(item._id, item.text)}
-              deleteToDo={() => deleteToDo(item._id, setToDo)}
+      {/* Renderização condicional das páginas com base na currentPage */}
+      {currentPage === "todo" && (
+        <div>
+          <div className="top" >
+            <input
+              type="text"
+              placeholder="Digite sua tarefa aqui..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              maxLength={46}
             />
-          ))}
-        </div>
-        <div className="pomodoro-box">
-          <Pomodoro />
-        </div>
-      </div>
+            <div className="add" onClick={addOrUpdateToDo}>
+              {isUpdating ? <FaRegArrowAltCircleUp/> : <FaPlus/>}
+            </div>
+          </div>
 
-      {/* Componente Modal */}
-      <Modal show={showModal} handleClose={handleCloseModal}>
+          <div className="list">
+            {toDo.map((item) => (
+              <ToDo
+                key={item._id}
+                toDoId={item._id}
+                text={item.text}
+                isChecked={item.isChecked}
+                updateMode={() => updateMode(item._id, item.text)}
+                deleteToDo={() => deleteToDo(item._id, setToDo)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {currentPage === "pomodoro" && (
+        <div className="pomodoro-container">
+          <div className="pomodoro-box">
+            <Pomodoro />
+
+            
+          </div>
+          <div className="pomodoro-text-box">
+            <div>
+            O Método Pomodoro é uma técnica de produtividade baseada em intervalos de trabalho curtos, 
+            geralmente de 25 minutos, seguidos por breves pausas de 5 minutos. Ajuda a manter o foco, 
+            aumentar a eficiência e reduzir a procrastinação.
+            </div>
+
+          </div>
+        </div>
+      )}
+
+<Modal show={showModal} handleClose={handleCloseModal}>
         <p>Sua mensagem aqui!</p>
       </Modal>
+    </div>
     </div>
   );
 }
