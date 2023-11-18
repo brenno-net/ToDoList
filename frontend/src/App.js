@@ -38,13 +38,11 @@ function App() {
     <div className="App">
       {/* Barra de navegação */}
       <div class="header">
-      <div class="header__logo">
-      <h1>Uni-List <FaBookOpen/></h1>
-        <div className="description-box">
-          <h4 className="description" >Nossa aplicação web de ToDo list para estudantes oferece funcionalidades simples: criar, editar, marcar e remover tarefas. Organize seus estudos de forma eficaz e mantenha o foco no que é importante.</h4>
-        </div>
+        <div class="header__logo">
+          <h1>Uni-List <FaBookOpen/></h1>
+          
 
-      </div>
+        </div>
         <div className="navbar" >
 
             <button className={currentPage === "todo" ? "button active" : "button"}
@@ -53,6 +51,18 @@ function App() {
             onClick={() => setCurrentPage("pomodoro")}>Pomodoro</button>
             
         </div>
+        <div className="top" >
+            <input
+              type="text"
+              placeholder="Digite sua tarefa aqui..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              maxLength={46}
+            />
+            <div className="add" onClick={addOrUpdateToDo}>
+              {isUpdating ? <FaRegArrowAltCircleUp/> : <FaPlus/>}
+            </div>
+          </div>
       </div>
 
       <div className="container">
@@ -66,18 +76,7 @@ function App() {
       {/* Renderização condicional das páginas com base na currentPage */}
       {currentPage === "todo" && (
         <div>
-          <div className="top" >
-            <input
-              type="text"
-              placeholder="Digite sua tarefa aqui..."
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              maxLength={46}
-            />
-            <div className="add" onClick={addOrUpdateToDo}>
-              {isUpdating ? <FaRegArrowAltCircleUp/> : <FaPlus/>}
-            </div>
-          </div>
+          
 
           <div className="mandatory">
             {toDo.map((item) => (

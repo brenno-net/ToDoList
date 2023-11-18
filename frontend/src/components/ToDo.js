@@ -21,6 +21,10 @@ const ToDo = ({text ,date,  updateMode, deleteToDo, toDoId}) =>{
         setIsChecked(!isChecked);
         localStorage.setItem(`isChecked-${toDoId}`, (!isChecked).toString());
       };
+
+      const textDecorationStyle = {
+        textDecoration: isChecked ? 'line-through' : 'none',
+      };
       
         // Função para formatar a data no formato desejado (exemplo: DD/MM/YYYY)
   const formatDate = (inputDate) => {
@@ -32,7 +36,7 @@ const ToDo = ({text ,date,  updateMode, deleteToDo, toDoId}) =>{
     return (
       <section class="section">  
         <div className={`todo ${isChecked ? 'completed' : ''}`}>
-            <div className="text">{text}</div>
+            <div className="text" style={textDecorationStyle}>{text}</div>
             <div className="date">{formatDate(date)}</div>           
              <div className="icons">
                 <BiEdit className='icon' onClick={updateMode} />

@@ -5,7 +5,7 @@
 
 body {
   font-family: 'Poppins'; 
-  background-color: #dfdcc5;
+  background-color: #f1f1f1;
 }
 
 .container{
@@ -14,10 +14,11 @@ body {
   display: grid;
   max-width: 1000px; /* Largura máxima do container principal */
   margin-bottom: 1rem;
-  margin: 250px auto;
+  margin: 240px auto;
   padding: 20px;
   border-radius: 20px;
-  background-color: #dfdcc5;
+  /* background-color: #dfdcc5; */
+  top:300px;
   
 }
 
@@ -30,6 +31,7 @@ body {
   color: #f1f1f1;
   align-items:center;
   margin-top: 0;
+  height: 150px;
 
   
 
@@ -42,7 +44,7 @@ body {
 }
 
 .header,
-.navbar {
+.navbar, .top {
   position: fixed;
   width: 100%; /* Ocupar a largura total da tela */
   z-index: 100; /* Garante que estejam acima de outros elementos */
@@ -55,6 +57,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Poppins';
+  top: 150px;
   
 }
 
@@ -95,6 +98,7 @@ h1{
   font-size: 100px;
   color: #5aa9e6;
   font-family: Montserrat;
+  border-bottom: 1px solid #cececd;
 }
 
 .header.description-box{
@@ -111,11 +115,13 @@ h4{
 
 
 .top{
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
+  padding: 8px;
   justify-content: center;
+  background-color: #a9d3ff;
+  top: 190px;
   
 
 }
@@ -162,7 +168,7 @@ input{
 /* COMPONENTE DAS TAREFAS: como cada tarefa será exibida */
 
 .todo{
-  position: relative;
+position: relative;
 font-size: 16px;
 letter-spacing: 2px;
 text-decoration: none;
@@ -226,6 +232,7 @@ icon{
   text-decoration: none;
   color: #5b5f97;
   background-color: #b8b8d1;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
   border-radius: 10px;
   padding: 0.25em 0.5em;
   user-select: none;
@@ -269,6 +276,7 @@ icon{
   border-radius: 50%;
   font-size: 20px;
   background-color: #ff6b6c;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -298,8 +306,8 @@ button:hover {
   letter-spacing: 1px;
   text-decoration: none;
   color: #5b5f97;
-  border-bottom: 2px solid #c4bfa0;
-  border-top: 2px solid #c4bfa0;
+  border-bottom: 2px solid #cececd;
+  border-top: 2px solid #cececd;
   padding: 0.25em 0.5em;
   user-select: none;
   -webkit-user-select: none;
