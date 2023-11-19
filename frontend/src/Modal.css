@@ -50,12 +50,23 @@
   border-radius: 50%; /* Torna o botão redondo */
   font-size: 30px;
   background-color: #4CABA6;
-  color: #fff;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px ;
+  color: #5b5f97;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  }
+  .open-button:hover{
+    background-color: #b8b8d1;
+  }
+
+  .open-button:active{
+    background-color: #b8b8d1 ;
+    box-shadow: inset 4px 2px 0px 0px #5b5f97;
+    transform: translate(5px, 5px);
 
   }
 
@@ -68,19 +79,26 @@
   }
   
   
-  .RoundButton{
+  .RoundButton{ 
     display: grid;
-    padding: 0.25em 0.5em;
-    font-size: 30px;
+    padding: 0.01em 0.5em;
+    font-size: 22px;
     text-align: center;
     text-decoration: none;
-    background-color: #3DADF2; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto */
+    background-color: #b8b8d1; /* Cor de fundo do botão */
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px ;
+    color: #5b5f97; /* Cor do texto */
     border: none; /* Remove a borda padrão do botão */
-    border-radius: 20px; /* Borda arredondada */
+    border-radius: 15px; /* Borda arredondada */
     cursor: pointer;
     margin: 10px auto;
     font-family: 'Poppins';
+  }
+  .RoundButton:active{
+    background-color: #b8b8d1 ;
+    box-shadow: inset 4px 2px 0px 0px #5b5f97;
+    transform: translate(5px, 5px);
+
   }
 
   .modal-message{

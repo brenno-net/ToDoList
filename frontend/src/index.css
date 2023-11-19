@@ -8,21 +8,20 @@ body {
   background-color: #f1f1f1;
 }
 
-.container{
+.container{ /* container onde as tasks são exibidas */
 
   
   display: grid;
-  max-width: 1000px; /* Largura máxima do container principal */
+  max-width: 1000px; 
   margin-bottom: 1rem;
   margin: 240px auto;
   padding: 20px;
   border-radius: 20px;
-  /* background-color: #dfdcc5; */
   top:300px;
   
 }
 
-.header{
+.header{ 
   
   top: 0;
   left: 0;
@@ -37,62 +36,60 @@ body {
 
 }
 
-.header description{
-  border-bottom: 10px #1B7F7A;
-  padding-bottom: 10px; /* Adicione algum espaço entre a borda e o texto */
 
-}
 
 .header,
 .navbar, .top {
   position: fixed;
   width: 100%; /* Ocupar a largura total da tela */
   z-index: 100; /* Garante que estejam acima de outros elementos */
-  /* Estilos adicionais como fundo, cores, altura, etc. */
-  background-color: #fffffb;
+  background-color: #fff;
 }
 
-.navbar {
+.navbar { /* BARRA DE NAVEGAÇÃO TODO/POMODORO */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Poppins';
   top: 150px;
   
-}
-
-.navbar h1 {
-  margin-right: auto; /* Empurra o h1 para a extremidade esquerda */
-  margin-left: 50px; /* Distância fixa do lado esquerdo da tela */
-  color: #f1f1f1;
-  font-family: 'Poppins';
   
 }
 
 
 
-.navbar button {
+
+
+.navbar button { /* BARRA DE NAVEGAÇÃO - BOTÕES */
   border: 2px solid var(--c-gray-900);
 	border-radius: 20px;
 	padding: 0.5rem;
 	background-color: #b8b8d1;
-  color: black;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px ;
+  color:#5b5f97;
   font-family: 'Poppins';
-  margin-bottom: 5px;
-  margin-left: 5px;
+  margin-bottom: 12px;
+  margin-left: 8px;
 }
 
 .navbar button:active {
-  background-color: #5b5f97;
+  background-color: #b8b8d1 ;
+  box-shadow: inset 4px 2px 0px 0px #5b5f97;
+  transform: translate(5px, 5px);
+
 }
 
 .button.active {
-  background-color: #5b5f97; /* Por exemplo, altere a cor de fundo para indicar o botão pressionado */
-  color: white; /* Altere a cor do texto para garantir a legibilidade */
-  /* Adicione mais estilos conforme necessário para realçar o botão pressionado */
+  background-color: #b8b8d1; 
+  color: #5b5f97; 
+  box-shadow: inset 4px 2px 0px 0px #5b5f97;
+  transform: translate(5px, 5px);
+  
 }
 
-h1{
+
+
+h1{ /* TITULO E ICON*/
   
   margin-left: 50px;
   font-size: 100px;
@@ -101,21 +98,12 @@ h1{
   border-bottom: 1px solid #cececd;
 }
 
-.header.description-box{
-  border: 8px;
-}
-/*subtexto descritivo*/
-h4{  
-  font-size: 13px;
-  margin-left: 30px;
-  font-weight: 450; /* Adicione esta linha para tornar a fonte mais fina */
-  color: #5b5f97;
-  width: 600px;
-}
 
 
-.top{
+.top{ /* TOPO onde se insere a tarefa */
+
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   gap: 1rem;
   padding: 8px;
@@ -136,12 +124,15 @@ h4{
 	border-radius: 20px;
 	padding: 0.5rem;
 	background-color: #ffc145;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
   color:#1B7F7A;
 	position: relative;
 
-}.add:hover{
+}.add:active{
   
   background-color: #A9D9D0;
+  box-shadow: inset 4px 2px 0px 0px #45C4B0;
+  transform: translate(5px, 5px);
   
 }
 
@@ -221,7 +212,7 @@ icon{
 
   margin-top: 20px;
   display: flex;
-  justify-content: center; /* Alinha os botões horizontalmente */
+  justify-content: center; 
 }
 .pomodoro-box {
   position: relative;
@@ -238,7 +229,7 @@ icon{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 250px; /* Ajuste a largura conforme necessário */
+  width: 250px; /* Ajuste a largura */
   
   
 }
@@ -257,14 +248,14 @@ icon{
   -webkit-user-select: none;
   touch-action: manipulation;
   margin: 10px auto;
-  width: 150px; /* Ajuste a largura conforme necessário */
+  width: 150px; 
   justify-content: center;
 }
 
 .controls {
   margin-top: 20px;
   display: flex;
-  justify-content: center; /* Alinha os botões horizontalmente */
+  justify-content: center; 
 }
 
 /* BOTÕES POMODORO */
@@ -277,15 +268,22 @@ icon{
   font-size: 20px;
   background-color: #ff6b6c;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  color: #fff;
+  color: #dfdcc5;
   border: none;
   cursor: pointer;
-  margin: 5px auto; /* Adicione margem entre os botões */
+  margin: 5px auto; 
 
 }
 button:hover {
-  background-color: #d6f0eb;
+
+  background-color: #45C4B0;
   
+}
+button:active{
+
+  background-color: #A9D9D0;
+  box-shadow: inset 4px 2px 0px 0px #45C4B0;
+  transform: translate(5px, 5px);
 }
 
 .title {
@@ -295,25 +293,25 @@ button:hover {
 }
 
 .text{
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 515px;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
-.pomodoro-text-box{
+.pomodoro-text-box{  /* TEXTO - pomodoro  */
   font-size: 16px;
   letter-spacing: 1px;
   text-decoration: none;
   color: #5b5f97;
   border-bottom: 2px solid #cececd;
-  border-top: 2px solid #cececd;
+  border-top: 2px solid #cececd; 
   padding: 0.25em 0.5em;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-left: 40px;
-  width: 400px; /* Ajuste a largura conforme necessário */
+  width: 400px;
   height: fit-content;
 }
 

@@ -43,14 +43,14 @@ function App() {
           
 
         </div>
-        <div className="navbar" >
+        <nav className="navbar" >
 
             <button className={currentPage === "todo" ? "button active" : "button"}
             onClick={() => setCurrentPage("todo")}>ToDo</button>
             <button className={currentPage === "pomodoro" ? "button active" : "button"}
             onClick={() => setCurrentPage("pomodoro")}>Pomodoro</button>
             
-        </div>
+        </nav>
         <div className="top" >
             <input
               type="text"

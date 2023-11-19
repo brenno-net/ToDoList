@@ -7,10 +7,7 @@ const todoSchema = new mongoose.Schema({
     type: String, // Campo 'text' é do tipo String
     required: true, // É obrigatório fornecer um valor para 'text'
   },
-  check: {
-    type: Boolean, // Campo 'check' é do tipo Boolean
-    default: false, // O valor padrão é false, ou seja, não marcado como concluído
-  },
+
   date: {
     type: Date, // Campo 'date' é do tipo Date
     default: Date.now(), // O valor padrão é a data e hora atual

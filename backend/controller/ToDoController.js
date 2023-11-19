@@ -14,14 +14,15 @@ module.exports.saveToDo = async (req, res) => {
   const { text } = req.body;  // Extrai o campo 'text' do corpo da solicitação (request body)
 
   if (!text || text.trim() === "") { // Verifica se o campo 'text' está vazio ou apenas contém espaços em branco
+    console.log("Campo de texto não pode estar vazio...");
     return res.status(400).send("O campo de texto não pode estar vazio.");
   }
 
   // Cria uma nova tarefa no banco de dados usando o modelo ToDoModel
   ToDoModel.create({ text })
     .then((data) => {
-      console.log("Adicionado com sucesso...");
       console.log(data);
+      console.log("Adicionado com sucesso...");
       res.send(data);
     })
     .catch((error) => {
@@ -42,9 +43,9 @@ module.exports.updateToDo = async (req, res) => {
       { new: true } // Retorna o documento atualizado
     );
 
-    console.log("Atualizado com sucesso...");
     console.log(updatedToDo);
     res.send(updatedToDo);
+    console.log("Atualizado com sucesso...");
   } catch (error) {
     console.error(error);
     res.status(500).send("Erro ao atualizar tarefa.");
@@ -63,6 +64,7 @@ module.exports.deleteToDo = async (req, res) => {
     
     console.log(deletedToDo);
     res.send("Deletado com sucesso...");
+    console.log("Deletado com sucesso...");
   } catch (error) {
     console.error(error);
     res.status(500).send("Erro ao deletar tarefa.");
@@ -85,6 +87,8 @@ module.exports.checkToDo = async (req, res) => {
     console.log("Atualizado com sucesso...");
     console.log(checkedToDo);
     res.send(checkedToDo);
+    console.log("Atualizado com sucesso...");
+
   } catch (error) {
     console.error(error);
     res.status(500).send("Erro ao atualizar tarefa.");
