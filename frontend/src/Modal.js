@@ -1,8 +1,7 @@
 import React from 'react';
 import './Modal.css';
 import {BiEdit} from "react-icons/bi"
-import {AiFillDelete} from "react-icons/ai"
-import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
+import { AiOutlineCheckCircle, AiFillCheckCircle, AiFillDelete  } from 'react-icons/ai';
 import {FaPlus, FaRegArrowAltCircleUp, FaPlay, FaPause, FaHistory, FaMugHot} from 'react-icons/fa'
 
 const Modal = ({ show, handleClose }) => {
