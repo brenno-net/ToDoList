@@ -1,5 +1,5 @@
 // Importa o módulo mongoose para trabalhar com o MongoDB
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 // Define o esquema para a coleção de tarefas "ToDo"
 const todoSchema = new mongoose.Schema({
@@ -11,8 +11,8 @@ const todoSchema = new mongoose.Schema({
   date: {
     type: Date, // Campo 'date' é do tipo Date
     default: Date.now(), // O valor padrão é a data e hora atual
-  }
-});
+  },
+})
 
 // Exporta o modelo de tarefa (ToDo) criado a partir do esquema criado
-module.exports = mongoose.model("ToDo", todoSchema);
+module.exports = mongoose.model('ToDo', todoSchema)

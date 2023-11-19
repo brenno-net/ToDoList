@@ -1,83 +1,82 @@
-import React, { useState, useEffect } from 'react';
-import {FaPlay, FaPause, FaHistory, FaMugHot} from 'react-icons/fa'
-
+import React, { useState, useEffect } from 'react'
+import { FaPlay, FaPause, FaHistory, FaMugHot } from 'react-icons/fa'
 
 // Importe o áudio que você deseja reproduzir
-import audioFile from '../components/audios/beep-beep-6151.mp3';
+import audioFile from '../components/audios/beep-beep-6151.mp3'
 
 function Pomodoro() {
-  const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(false);
-  const [isBreakActive, setIsBreakActive] = useState(false);
-  const [playAudio, setPlayAudio] = useState(false); // Adicione o estado playAudio
+  const [minutes, setMinutes] = useState(25)
+  const [seconds, setSeconds] = useState(0)
+  const [isActive, setIsActive] = useState(false)
+  const [isBreakActive, setIsBreakActive] = useState(false)
+  const [playAudio, setPlayAudio] = useState(false) // Adicione o estado playAudio
 
   useEffect(() => {
-    let interval;
+    let interval
 
     if (isActive && !isBreakActive) {
       interval = setInterval(() => {
         if (seconds > 0) {
-          setSeconds(seconds - 1);
+          setSeconds(seconds - 1)
         } else if (minutes > 0) {
-          setMinutes(minutes - 1);
-          setSeconds(59);
+          setMinutes(minutes - 1)
+          setSeconds(59)
         } else {
-          clearInterval(interval);
-          setIsActive(false);
-          setPlayAudio(true); // Iniciar a reprodução do áudio quando o temporizador terminar
+          clearInterval(interval)
+          setIsActive(false)
+          setPlayAudio(true) // Iniciar a reprodução do áudio quando o temporizador terminar
         }
-      }, 1000);
+      }, 1000)
     } else if (isBreakActive) {
       interval = setInterval(() => {
         if (seconds > 0) {
-          setSeconds(seconds - 1);
+          setSeconds(seconds - 1)
         } else if (minutes > 0) {
-          setMinutes(minutes - 1);
-          setSeconds(59);
+          setMinutes(minutes - 1)
+          setSeconds(59)
         } else {
-          clearInterval(interval);
-          setIsBreakActive(false);
-          setPlayAudio(true); // Iniciar a reprodução do áudio quando o temporizador de intervalo terminar
+          clearInterval(interval)
+          setIsBreakActive(false)
+          setPlayAudio(true) // Iniciar a reprodução do áudio quando o temporizador de intervalo terminar
         }
-      }, 1000);
+      }, 1000)
     } else {
-      clearInterval(interval);
+      clearInterval(interval)
     }
 
     return () => {
-      clearInterval(interval);
-    };
-  }, [isActive, isBreakActive, minutes, seconds]);
+      clearInterval(interval)
+    }
+  }, [isActive, isBreakActive, minutes, seconds])
 
   // Adicione um novo useEffect para controlar a reprodução do áudio
   useEffect(() => {
     if (playAudio) {
-      const audio = new Audio(audioFile);
-      audio.play();
-      audio.play();
+      const audio = new Audio(audioFile)
+      audio.play()
+      audio.play()
     }
-  }, [playAudio]);
+  }, [playAudio])
 
   const toggleTimer = () => {
     if (!isBreakActive) {
-      setIsActive(!isActive);
+      setIsActive(!isActive)
     }
-  };
+  }
 
   const startBreak = () => {
-    setIsActive(false);
-    setMinutes(5); // Altere para a duração do intervalo desejada (5 minutos)
-    setSeconds(0);
-    setIsBreakActive(true);
-  };
+    setIsActive(false)
+    setMinutes(5) // Altere para a duração do intervalo desejada (5 minutos)
+    setSeconds(0)
+    setIsBreakActive(true)
+  }
 
   const resetTimer = () => {
-    setIsActive(false);
-    setIsBreakActive(false);
-    setMinutes(25);
-    setSeconds(0);
-  };
+    setIsActive(false)
+    setIsBreakActive(false)
+    setMinutes(25)
+    setSeconds(0)
+  }
 
   return (
     <div className="pomodoro">
@@ -89,17 +88,17 @@ function Pomodoro() {
       </div>
       <div className="controls">
         <button className="pomodoro-button" onClick={toggleTimer}>
-          {isActive ? <FaPause/> : <FaPlay/>}
+          {isActive ? <FaPause /> : <FaPlay />}
         </button>
         <button className="pomodoro-button" onClick={startBreak}>
-          <FaMugHot/>
+          <FaMugHot />
         </button>
         <button className="pomodoro-button" onClick={resetTimer}>
-        <FaHistory />
+          <FaHistory />
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Pomodoro;
+export default Pomodoro
