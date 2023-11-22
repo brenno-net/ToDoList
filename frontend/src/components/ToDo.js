@@ -33,7 +33,7 @@ const ToDo = ({ text, date, updateMode, deleteToDo, toDoId }) => {
         <div className="text" style={textDecorationStyle}>
           {text}
         </div>
-        <div className="date">{formatDate(date)}</div>
+        <div className="date">{formatDate(date)}</div> {/* exibe data de criação*/}
         <div className="icons">
           <BiEdit className="icon" onClick={updateMode} />
           <AiFillDelete className="icon" onClick={deleteToDo} />

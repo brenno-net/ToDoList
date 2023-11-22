@@ -53,9 +53,7 @@ function App() {
           <button
             className={currentPage === 'pomodoro' ? 'button active' : 'button'}
             onClick={() => setCurrentPage('pomodoro')}
-          >
-            Pomodoro
-          </button>
+          >Pomodoro</button>
         </nav>
         <div className="top">
           <input

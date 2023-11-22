@@ -194,12 +194,11 @@ max-width: 600px;
   display: flex;
   gap: 0.5rem;
   cursor: pointer;
-
 }
 
 icon{
   cursor: pointer;
-  font-size: 20px;
+  font-size: 5px;
 
 }
 
@@ -272,12 +271,13 @@ icon{
   height: 50px;
   border-radius: 50%;
   font-size: 20px;
-  background-color: #ff6b6c;
+  background-color: #ffc145;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  color: #dfdcc5;
+  color: #1B7F7A;
   border: none;
   cursor: pointer;
-  margin: 5px auto; 
+  margin: 5px auto;
+  margin-bottom: 1rem; 
 
 }
 button:hover {
@@ -367,6 +367,7 @@ button:active{
     max-width: 90%; /* Ajustar a largura das tarefas */
     height: 30%;
   }
+
 
   .pomodoro-text-box {
     margin-left: 20px; /* Ajustar margem do texto do pomodoro */

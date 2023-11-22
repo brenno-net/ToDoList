@@ -52,7 +52,6 @@ function Pomodoro() {
     if (playAudio) {
       const audio = new Audio(audioFile)
       audio.play()
-      audio.play()
     }
   }, [playAudio])
 
@@ -64,7 +63,7 @@ function Pomodoro() {
 
   const startBreak = () => {
     setIsActive(false)
-    setMinutes(5) // Altere para a duração do intervalo
+    setMinutes(1) // Altere para a duração do intervalo
     setSeconds(0)
     setIsBreakActive(true)
   }
@@ -83,9 +82,9 @@ function Pomodoro() {
         <p>
           {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
         </p>
-      </div>
+      </div> 
       <div className="controls">
-        <button className="pomodoro-button" onClick={toggleTimer}>
+        <button className="pomodoro-button" onClick={toggleTimer}> 
           {isActive ? <FaPause /> : <FaPlay />}
         </button>
         <button className="pomodoro-button" onClick={startBreak}>
