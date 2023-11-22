@@ -127,6 +127,7 @@ h1{ /* TITULO E ICON*/
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
   color:#1B7F7A;
 	position: relative;
+  cursor:pointer;
 
 }.add:active{
   
@@ -165,9 +166,8 @@ letter-spacing: 2px;
 text-decoration: none;
 color: #5b5f97;
 background-color: #b8b8d1;
-cursor: pointer;
 border: 3px solid;
-border-radius: 10px;
+border-radius: 15px;
 padding: 0.25em 0.5em;
 box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
 position: relative;
@@ -179,6 +179,12 @@ max-width: 600px;
 
 }
 
+.text{
+  max-width: 600px; /* Limita a largura do texto a 300 pixels */
+  overflow: hidden; /* Esconde o texto caso ele exceda o limite de largura */
+  white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+  text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto é cortado */
+}
 
 .icons{
   position: absolute;
@@ -315,3 +321,55 @@ button:active{
   height: fit-content;
 }
 
+
+/* mobile */
+@media all and (orientation: portrait) { 
+
+  .container {
+    max-width: none; /* Remover largura máxima para permitir largura total na tela */
+  }
+
+  .header {
+    height: 13%; /* Altura para o cabeçalho */
+  }
+
+  .navbar {
+    top: 13%; /* Ajustar a posição da barra de navegação */
+  }
+
+  .navbar button {
+    margin-left: 8px auto; 
+    padding: 3%;
+    font-size: 20px;
+    font-weight: 1000;
+  }
+
+  h1 {
+    margin: none; /* Reduzir a margem do título */
+    font-size: 90px; /* Tamanho de fonte menor para dispositivos mobile */
+  }
+
+  .top {
+    top: 19.5%; /* Ajustar a posição do topo */
+  }
+
+  input {
+    width: 90%; /* Ajustar a largura do input para ocupar a maior parte da largura */
+    max-width: 70%; /* Limitar a largura */
+    font-size: 30px;
+  }
+
+  .list {
+    border-right: none;
+  }
+
+  .todo {
+    max-width: 90%; /* Ajustar a largura das tarefas */
+    height: 30%;
+  }
+
+  .pomodoro-text-box {
+    margin-left: 20px; /* Ajustar margem do texto do pomodoro */
+    width: 90%; /* Ajustar a largura do texto */
+  }
+}

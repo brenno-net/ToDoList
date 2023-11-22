@@ -63,7 +63,6 @@ function App() {
             placeholder="Digite sua tarefa aqui..."
             value={text}
             onChange={(e) => setText(e.target.value)}
-            maxLength={46}
           />
           <div className="add" onClick={addOrUpdateToDo}>
             {isUpdating ? <FaRegArrowAltCircleUp /> : <FaPlus />}

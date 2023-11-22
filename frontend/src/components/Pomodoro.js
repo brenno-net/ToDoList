@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaPlay, FaPause, FaHistory, FaMugHot } from 'react-icons/fa'
 
-// Importe o áudio que você deseja reproduzir
 import audioFile from '../components/audios/beep-beep-6151.mp3'
 
 function Pomodoro() {
@@ -9,7 +8,7 @@ function Pomodoro() {
   const [seconds, setSeconds] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [isBreakActive, setIsBreakActive] = useState(false)
-  const [playAudio, setPlayAudio] = useState(false) // Adicione o estado playAudio
+  const [playAudio, setPlayAudio] = useState(false) 
 
   useEffect(() => {
     let interval
@@ -24,7 +23,7 @@ function Pomodoro() {
         } else {
           clearInterval(interval)
           setIsActive(false)
-          setPlayAudio(true) // Iniciar a reprodução do áudio quando o temporizador terminar
+          setPlayAudio(true) 
         }
       }, 1000)
     } else if (isBreakActive) {
@@ -37,7 +36,7 @@ function Pomodoro() {
         } else {
           clearInterval(interval)
           setIsBreakActive(false)
-          setPlayAudio(true) // Iniciar a reprodução do áudio quando o temporizador de intervalo terminar
+          setPlayAudio(true) 
         }
       }, 1000)
     } else {
@@ -49,7 +48,6 @@ function Pomodoro() {
     }
   }, [isActive, isBreakActive, minutes, seconds])
 
-  // Adicione um novo useEffect para controlar a reprodução do áudio
   useEffect(() => {
     if (playAudio) {
       const audio = new Audio(audioFile)
@@ -66,7 +64,7 @@ function Pomodoro() {
 
   const startBreak = () => {
     setIsActive(false)
-    setMinutes(5) // Altere para a duração do intervalo desejada (5 minutos)
+    setMinutes(5) // Altere para a duração do intervalo
     setSeconds(0)
     setIsBreakActive(true)
   }

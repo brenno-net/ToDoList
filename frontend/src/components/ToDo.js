@@ -21,7 +21,7 @@ const ToDo = ({ text, date, updateMode, deleteToDo, toDoId }) => {
     textDecoration: isChecked ? 'line-through' : 'none',
   }
 
-  // Função para formatar a data no formato desejado (exemplo: DD/MM/YYYY)
+  // Função para formatar a data no formato desejado (DD/MM/YYYY)
   const formatDate = (inputDate) => {
     const dateObj = new Date(inputDate)
     return dateObj.toLocaleDateString('pt-BR') // Formato brasileiro de data (DD/MM/YYYY)
