@@ -1,4 +1,4 @@
-__Aplicação To-Do List e Temporizador Pomodoro (MERN Stack)__
+# Aplicação To-Do List e Temporizador Pomodoro (MERN Stack)
 
 Este projeto foi desenvolvido como parte de um trabalho acadêmico na Universidade de Brasília. Trata-se de uma aplicação web que combina duas funcionalidades principais:
 
