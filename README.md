@@ -12,7 +12,10 @@ Além da lista de tarefas, a aplicação também inclui um temporizador no estil
 O projeto foi construído utilizando a MERN Stack, que consiste em:
 
 **MongoDB:** Banco de dados para armazenar as tarefas dos usuários.
+
 **Express.js:** Framework para criação de APIs RESTful que suporta o back-end da aplicação.
+
 **React:** Biblioteca JavaScript para o desenvolvimento do front-end interativo e responsivo.
+
 **Node.js:** Ambiente de execução JavaScript do lado do servidor.
 
