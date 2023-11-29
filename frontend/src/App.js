@@ -98,7 +98,8 @@ function App() {
         {currentPage === 'pomodoro' && (
           <div className="pomodoro-container">
             <div className="pomodoro-box">
-              <Pomodoro />
+              <Pomodoro 
+              />
             </div>
             <div className="pomodoro-text-box">
               <div>

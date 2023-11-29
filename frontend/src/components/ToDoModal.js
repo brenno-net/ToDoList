@@ -7,11 +7,13 @@ const Modal = ({ show, onClose, text }) => {
     return null;
   }
 
+
   return (
     <div className="modal">
+
       <div className="modal-content">
 
-        <p>{text}</p>
+        <p className="text-modal">{text}</p>
         <span className="close" onClick={onClose}>
         <FaTimes />
         </span>

@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "Server.js"
+      }
+    ],
+    "env": {
+      "MONGODB_URL": "mongodb+srv://root:admin@todolist.86lzfn5.mongodb.net/?retryWrites=true&w=majority" 
+    }
+  }
+  
