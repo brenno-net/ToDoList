@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000 // Define a porta do servidor
 app.use(express.json()) // Habilita o Express para interpretar solicitações no formato JSON
 // Configuração do CORS para permitir solicitações de um frontend específico
 const corsOptions = {
-  origin: 'https://to-do-list-brennos-projects-1cf4166b.vercel.app/', // Substitua pelo URL do seu frontend
+  origin: '*', // Substitua pelo URL do seu frontend
   optionsSuccessStatus: 200 // Alguns navegadores podem retornar um código de status 204 (No Content) para requisições OPTIONS pré-voo; aqui você pode definir 200
 };
 
