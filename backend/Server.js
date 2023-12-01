@@ -18,7 +18,6 @@ const corsOptions = {
   optionsSuccessStatus: 200 // Alguns navegadores podem retornar um código de status 204 (No Content) para requisições OPTIONS pré-voo; aqui você pode definir 200
 };
 
-app.use(cors(corsOptions));
 
 app.use(cors(corsOptions)) // Habilita o CORS para permitir solicitações de diferentes origens
 
