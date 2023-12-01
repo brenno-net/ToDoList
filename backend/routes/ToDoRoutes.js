@@ -14,10 +14,7 @@ const {
 
 const router = Router();//Define as rotas e associa cada rota a uma função do controlador correspondente
 
-router.get("/", (req, res) => {
-  console.log("A rota raiz foi acessada!");
-  res.send("Rota raiz está funcionando!");
-});
+
 
 router.get("/", getToDo); // Rota para obter todas as tarefas (GET)
 router.post("/save", saveToDo); // Rota para salvar uma nova tarefa (POST)
