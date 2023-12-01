@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://to-do-list-backend-umber.vercel.app/'
+const baseUrl = 'https://to-do-list-backend-umber.vercel.app'
 
 const getAllToDo = (setToDo) => {
   axios.get(baseUrl).then(({ data }) => {
