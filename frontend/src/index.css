@@ -353,6 +353,27 @@ button:active{
     top: 19.5%; /* Ajustar a posição do topo */
   }
 
+  .add{
+
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--c-gray-900);
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: #ffc145;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
+    color:#1B7F7A;
+    position: relative;
+    cursor:pointer;
+  
+  }.add:active{
+    
+    background-color: #A9D9D0;
+    box-shadow: inset 4px 2px 0px 0px #45C4B0;
+    transform: translate(5px, 5px);
+    
+  }
+
   input {
     width: 90%; /* Ajustar a largura do input para ocupar a maior parte da largura */
     max-width: 70%; /* Limitar a largura */
