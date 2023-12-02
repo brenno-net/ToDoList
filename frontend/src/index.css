@@ -355,16 +355,10 @@ button:active{
 
   .add{
 
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--c-gray-900);
-    border-radius: 20px;
-    padding: 0.5rem;
-    background-color: #ffc145;
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
-    color:#1B7F7A;
-    position: relative;
-    cursor:pointer;
+    margin-left: 8px auto; 
+    padding: 3%;
+    font-size: 20px;
+    font-weight: 1000;
   
   }.add:active{
     
