@@ -323,7 +323,7 @@ button:active{
 
 
 /* mobile */
-@media all and (orientation: portrait) { 
+@media (max-width: 414px) { 
 
   .container {
     max-width: none; /* Remover largura máxima para permitir largura total na tela */
