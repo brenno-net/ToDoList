@@ -384,6 +384,12 @@ button:active{
     height: 30%;
   }
 
+  .pomodoro-container{
+
+    display: grid;
+
+  }
+
 
   .pomodoro-text-box {
     margin-left: 20px; /* Ajustar margem do texto do pomodoro */
