@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaPlay, FaPause, FaHistory, FaMugHot } from 'react-icons/fa'
 
-import audioFile from '../components/audios/ALARME-POMODORO.mp3'
+import audioFile from '../components/audios/ALARME-POMODORO.mp3' //AUDIO ALARME
 
 function Pomodoro() {
   const [minutes, setMinutes] = useState(25)
@@ -63,7 +63,7 @@ function Pomodoro() {
 
   const startBreak = () => {
     setIsActive(false)
-    setMinutes(5) // Altere para a duração do intervalo
+    setMinutes(1) // ALTERAR INTERVALO
     setSeconds(0)
     setIsBreakActive(true)
   }
