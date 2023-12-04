@@ -39,7 +39,7 @@ const ToDo = ({ text, date, updateMode, deleteToDo, toDoId }) => {
     return dateObj.toLocaleDateString('pt-BR');
   };
 
-  return (
+  return ( //INTERFACE DA TAREFA
     <section className="section">
       <div className={`todo ${isChecked ? 'completed' : ''}`}>
         <div className="text" style={textDecorationStyle} onClick={openModalOnClick}>
@@ -56,7 +56,7 @@ const ToDo = ({ text, date, updateMode, deleteToDo, toDoId }) => {
           )}
         </div>
       </div>
-      <ToDoModal show={showModal} onClose={closeModal} text={text} />
+      <ToDoModal show={showModal} onClose={closeModal} text={text} /> 
     </section>
   );
 };

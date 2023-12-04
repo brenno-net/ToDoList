@@ -10,7 +10,7 @@ function Pomodoro() {
   const [isBreakActive, setIsBreakActive] = useState(false)
   const [playAudio, setPlayAudio] = useState(false) 
 
-  useEffect(() => {
+  useEffect(() => { //FUNÇÕES CONTROLADORAS DO TEMPORIZADOR
     let interval
 
     if (isActive && !isBreakActive) {
@@ -48,7 +48,7 @@ function Pomodoro() {
     }
   }, [isActive, isBreakActive, minutes, seconds])
 
-  useEffect(() => {
+  useEffect(() => { //TOCAR AUDIO
     if (playAudio) {
       const audio = new Audio(audioFile)
       audio.play()
@@ -76,11 +76,11 @@ function Pomodoro() {
     setSeconds(0)
   }
 
-  return (
+  return ( //CÓDIGO DA INTERFACE DO TEMPORIZADOR
     <div className="pomodoro">
       <h2 className="title">Pomodoro Timer</h2>
       <div className="timer">
-        <p>
+        <p> 
           {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
         </p>
       </div> 

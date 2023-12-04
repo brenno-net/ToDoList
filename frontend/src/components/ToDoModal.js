@@ -8,7 +8,7 @@ const Modal = ({ show, onClose, text }) => {
   }
 
 
-  return (
+  return ( //BOTÃO GUIA DO USUARIO
     <div className="modal">
 
       <div className="modal-content">
