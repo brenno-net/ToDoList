@@ -64,7 +64,7 @@ function Pomodoro() {
 
   const startBreak = () => {
     setIsActive(false)
-    setMinutes(1) // ALTERAR INTERVALO
+    setMinutes(5) // ALTERAR INTERVALO
     setSeconds(0)
     setIsBreakActive(true)
   }
