@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaPlay, FaPause, FaHistory, FaMugHot } from 'react-icons/fa'
 
-import audioFile from '../components/audios/ALARME-POMODORO.mp3' //AUDIO ALARME
+import audioFile from '../components/audios/ALARME - UEPA.mp3' //AUDIO ALARME
 
 function Pomodoro() {
   const [minutes, setMinutes] = useState(25)
